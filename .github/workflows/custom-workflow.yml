@@ -5,6 +5,10 @@ on:
     branches:
       - develop
 
+
+env:
+  MY_FAVORITE_COLOR: "Blue"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,4 +17,6 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Run a custom script
-        run: echo "This workflow only runs on the develop branch! Task 4 is successful!"
+        run: |
+          echo "This workflow only runs on the develop branch! Task 4 is successful!"
+          echo "My favorite color is ${{ env.MY_FAVORITE_COLOR }}"
