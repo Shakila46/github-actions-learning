@@ -8,6 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./sample-app
+    
     
     
     strategy:
@@ -24,7 +29,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: Run npm install
+        run: npm install
 
       - name: Run Tests
         run: npm test
