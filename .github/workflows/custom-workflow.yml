@@ -20,3 +20,4 @@ jobs:
         run: |
           echo "This workflow only runs on the develop branch! Task 4 is successful!"
           echo "My favorite color is ${{ env.MY_FAVORITE_COLOR }}"
+          echo "The secret message is: ${{ secrets.SUPER_SECRET_MESSAGE }}"
