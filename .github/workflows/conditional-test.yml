@@ -1,0 +1,23 @@
+name: Conditional Execution Test
+
+on:
+  push:
+    branches:
+      - advanced-tasks
+
+jobs:
+  check-condition:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Runs always
+        run: echo "This step always runs, no matter what."
+
+      
+      - name: Step 2 - Runs only on advanced-tasks branch
+        if: github.ref == 'refs/heads/advanced-tasks'
+        run: echo "Task 9 is successful! This runs because we are on the advanced-tasks branch."
+
+      
+      - name: Step 3 - Runs only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "You will not see this because we are not on the main branch."
